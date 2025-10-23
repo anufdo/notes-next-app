@@ -1,24 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Notes App
 
-## Getting Started
+A modern, secure notes application built with Next.js, featuring production-ready authentication with email/password and Google OAuth.
 
-First, run the development server:
+## ✨ Features
 
+- 📝 **Notes Management** - Create, edit, and organize your notes
+- 🔐 **Secure Authentication** - Email/password + Google OAuth
+- 🎨 **Modern UI** - Beautiful, responsive interface with Tailwind CSS
+- 🗄️ **Database** - Prisma ORM with SQLite (easy upgrade to PostgreSQL)
+- 🔒 **Protected Routes** - Middleware-based route protection
+- 🚀 **Production Ready** - Security best practices implemented
+
+## 🚀 Quick Start
+
+### 1. Setup Authentication (30 seconds)
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+./setup-auth.sh
+# Or manually copy .env.example to .env and configure
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install & Migrate (1 minute)
+```bash
+pnpm install
+pnpm prisma migrate dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run the App (30 seconds)
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Visit **http://localhost:3000/signin** to get started!
+
+## 📚 Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Get up and running in 3 minutes
+- **[AUTH_SETUP.md](AUTH_SETUP.md)** - Complete authentication setup guide
+- **[CHANGES.md](CHANGES.md)** - Detailed implementation summary
+
+## 🔑 Authentication
+
+This app includes production-ready authentication:
+
+✅ **Email/Password**
+- Secure password hashing with bcryptjs
+- Input validation and sanitization
+- User registration and login
+
+✅ **Google OAuth**
+- One-click Google sign-in
+- Automatic account creation
+- Profile synchronization
+
+✅ **Security**
+- JWT sessions with 30-day expiry
+- Protected API routes
+- SQL injection prevention
+- User enumeration prevention
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16.0
+- **Authentication:** NextAuth.js v4
+- **Database:** Prisma ORM + SQLite (upgradable to PostgreSQL)
+- **Styling:** Tailwind CSS v4
+- **Language:** TypeScript
+- **Password Hashing:** bcryptjs
 
 ## Learn More
 
